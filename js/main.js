@@ -94,13 +94,13 @@ function init() {
     const message = $contactForm.message.value;
     const to = 'junwoo1357@gmail.com';
 
-    // 이메일 클라이언트 열기
+    // 이메일 클라이언트를 열기!
     location.href =
       'mailto:' +
       encodeURIComponent(to) +
       '?subject=' +
       encodeURIComponent(`[${name}님 문의] ${subject}`) +
-      '&body' +
+      '&body=' +
       encodeURIComponent(message);
   });
 }
