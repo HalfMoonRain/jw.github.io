@@ -81,6 +81,28 @@ function init() {
   handleFloatingButton();
 
   typingIntroduce();
+
+  //이메일 클라이언트 열기
+  const $contactForm = document.getElementById('contactForm');
+
+  $contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // 폼 하위정보
+    const name = $contactForm.name.value;
+    const subject = $contactForm.subject.value;
+    const message = $contactForm.message.value;
+    const to = 'junwoo1357@gmail.com';
+
+    // 이메일 클라이언트 열기
+    location.href =
+      'mailto:' +
+      encodeURIComponent(to) +
+      '?subject=' +
+      encodeURIComponent(`[${name}님 문의] ${subject}`) +
+      '&body' +
+      encodeURIComponent(message);
+  });
 }
 
 // DOMContentLoaded 이벤트가 발생한 후 init 호출
